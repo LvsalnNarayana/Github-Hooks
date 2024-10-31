@@ -1,13 +1,19 @@
 // server.js
 import express, { json } from 'express';
 import { exec } from 'child_process';
+import { log } from 'console';
 
 const app = express();
 app.use(json());
 
+app.get('/',(req,res) => {
+    res.send("Hello world");
+});
+app.use(express.json());
 app.post('/payload', (req, res) => {
   const payload = req.body;
-
+  console.log("hello request");
+  
   // Check if it's a push event to the main branch
   if (payload.ref === 'refs/heads/main') {
     console.log('Push event detected on main branch. Building Docker image...');
