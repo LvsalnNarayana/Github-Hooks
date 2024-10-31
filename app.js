@@ -12,6 +12,8 @@ app.get('/',(req,res) => {
 app.use(express.json());
 app.post('/', (req, res) => {
   const payload = req.body;
+  console.log(payload);
+  
   console.log("hello request");
   
   // Check if it's a push event to the main branch
