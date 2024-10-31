@@ -20,7 +20,7 @@ app.post('/', (req, res) => {
 
     // Command to pull the latest changes and build the Docker image
     exec(
-      'cd /Users/narayanalvsaln/Dev/Test%20Setup/Github%20Hooks && git pull origin main && docker build . -t test-image:latest',
+      'cd /Users/narayanalvsaln/Dev/Test\\ Setup/Github\\ Hooks && git pull origin main && docker build . -t test-image:latest',
       (err, stdout, stderr) => {
         if (err) {
           console.error(`Error: ${stderr}`);
