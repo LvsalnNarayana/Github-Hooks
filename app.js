@@ -10,7 +10,7 @@ app.get('/',(req,res) => {
     res.send("Hello world");
 });
 app.use(express.json());
-app.post('/payload', (req, res) => {
+app.post('/', (req, res) => {
   const payload = req.body;
   console.log("hello request");
   
