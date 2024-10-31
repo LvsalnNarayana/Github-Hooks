@@ -20,7 +20,7 @@ app.post("/", (req, res) => {
 
     // Command to pull the latest changes and build the Docker image
     exec(
-      "cd /Users/narayanalvsaln/Dev/Test\\ Setup/Github\\ Hooks && git pull origin main && docker rmi -f test-image || true && docker build -t test-image .",
+      "cd /Users/narayanalvsaln/Dev/Test\\ Setup/Github\\ Hooks && git pull origin main && docker stop test-image-container || true && docker rm test-image-container || true && docker rmi -f test-image || true && docker build -t test-image . && docker run -d -p 4000:4000 --name test-image-container test-image",
       (err, stdout, stderr) => {
         if (err) {
           console.error(`Error: ${stderr}`);
