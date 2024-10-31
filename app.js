@@ -14,8 +14,6 @@ app.post('/', (req, res) => {
   const payload = req.body;
   console.log(payload);
   
-  console.log("hello request");
-  
   // Check if it's a push event to the main branch
   if (payload.ref === 'refs/heads/main') {
     console.log('Push event detected on main branch. Building Docker image...');
