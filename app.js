@@ -1,7 +1,6 @@
 // server.js
 import express, { json } from "express";
 import { exec } from "child_process";
-import { log } from "console";
 
 const app = express();
 app.use(json());
